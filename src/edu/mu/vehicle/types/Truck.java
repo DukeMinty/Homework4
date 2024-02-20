@@ -23,13 +23,13 @@ public class Truck extends Vehicle{
 
 	@Override
 	public double calculateMaintenanceCost(double distance) {
-		// TODO Auto-generated method stub
+		//Need to write math for this
 		return 0;
 	}
 
 	@Override
 	public double calculateFuelEfficiency(double distance, double fuelPrice) {
-		// TODO Auto-generated method stub
+		//Need to write math for this
 		return 0;
 	}
 
