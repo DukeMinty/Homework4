@@ -1,7 +1,5 @@
 package edu.mu.vehicle.types;
 
-import java.text.NumberFormat;
-
 import edu.mu.vehicle.FuelType;
 import edu.mu.vehicle.StartMechanism;
 import edu.mu.vehicle.Vehicle;
@@ -9,11 +7,11 @@ import edu.mu.vehicle.VehicleColor;
 
 public class Truck extends Vehicle{
 
-
-
 	public Truck(String type, String brand, String make, long modelYear, double price, VehicleColor color, FuelType fuelType,
 			double mileage, double mass, int cylinders, double gasTankCapacity, StartMechanism startType) {
 		super(brand, make, modelYear, price, color, fuelType, mileage, mass, cylinders, gasTankCapacity, startType);
+		//readFromFile should make sure these are Truck and Keystart
+		//but this is an extra measure since they're mandatory traits
 		setType("Truck");
 		setStartType(StartMechanism.KEYSTART);
 	}
@@ -24,8 +22,6 @@ public class Truck extends Vehicle{
 		super(original);
 	}
 	
-	NumberFormat currencyFormat = NumberFormat.getCurrencyInstance();
-	
 	@Override
 	public double calculateMaintenanceCost(double distance) {
 		double maintenanceCost = distance*getMass()*(2024-getModelYear())*getCylinders()*0.0005;
@@ -34,13 +30,23 @@ public class Truck extends Vehicle{
 
 	@Override
 	public double calculateFuelEfficiency(double distance, double fuelPrice) {
-		
-		return 0;
+		double fuelEfficiency = getCylinders()*getGasTankCapacity()*fuelPrice/distance*0.05;
+		return fuelEfficiency;
 	}
 
 	@Override
 	public void startEngine() {
-		// This needs to be Keystart
+		try {
+			System.out.println("Turning key...");
+            Thread.sleep(1000);
+            System.out.println("Vr...");
+            Thread.sleep(1000);
+            System.out.println("VR..");
+            Thread.sleep(1000);
+            System.out.println("VRRRRRR");
+            System.out.println("Started!");
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
 	}
-
 }
