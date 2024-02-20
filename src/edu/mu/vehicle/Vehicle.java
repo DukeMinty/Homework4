@@ -1,6 +1,8 @@
 package edu.mu.vehicle;
 
 public abstract class Vehicle {
+	
+	protected String type = "None";
 	protected String brand;
 	protected String make;
 	protected long modelYear;
@@ -50,6 +52,14 @@ public abstract class Vehicle {
 	public abstract double calculateFuelEfficiency(double distance, double fuelPrice);
 
 	public abstract void startEngine();
+	
+	public String getType() {
+		return type;
+	}
+
+	public void setType(String type) {
+		this.type = type;
+	}
 
 	// Getters and Setters
 	public String getBrand() {
