@@ -1,5 +1,7 @@
 package edu.mu.vehicle.types;
 
+import java.text.NumberFormat;
+
 import edu.mu.vehicle.FuelType;
 import edu.mu.vehicle.StartMechanism;
 import edu.mu.vehicle.Vehicle;
@@ -12,7 +14,8 @@ public class Truck extends Vehicle{
 	public Truck(String type, String brand, String make, long modelYear, double price, VehicleColor color, FuelType fuelType,
 			double mileage, double mass, int cylinders, double gasTankCapacity, StartMechanism startType) {
 		super(brand, make, modelYear, price, color, fuelType, mileage, mass, cylinders, gasTankCapacity, startType);
-		setType(type);
+		setType("Truck");
+		setStartType(StartMechanism.KEYSTART);
 	}
 
 	
@@ -20,23 +23,24 @@ public class Truck extends Vehicle{
 	public Truck(Truck original) {
 		super(original);
 	}
-
+	
+	NumberFormat currencyFormat = NumberFormat.getCurrencyInstance();
+	
 	@Override
 	public double calculateMaintenanceCost(double distance) {
-		//Need to write math for this
-		return 0;
+		double maintenanceCost = distance*getMass()*(2024-getModelYear())*getCylinders()*0.0005;
+		return maintenanceCost;
 	}
 
 	@Override
 	public double calculateFuelEfficiency(double distance, double fuelPrice) {
-		//Need to write math for this
+		
 		return 0;
 	}
 
 	@Override
 	public void startEngine() {
-		// TODO Auto-generated method stub
-		
+		// This needs to be Keystart
 	}
 
 }

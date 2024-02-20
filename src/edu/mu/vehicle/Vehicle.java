@@ -1,5 +1,7 @@
 package edu.mu.vehicle;
 
+import java.text.NumberFormat;
+
 public abstract class Vehicle {
 	
 	protected String type = "None";
@@ -149,4 +151,15 @@ public abstract class Vehicle {
 	public void setStartType(StartMechanism startType) {
 		this.startType = startType;
 	}
+
+	NumberFormat currencyFormat = NumberFormat.getCurrencyInstance();
+	
+	@Override
+	public String toString() {
+		return "Vehicle [type=" + type + ", brand=" + brand + ", make=" + make + ", modelYear=" + modelYear + ", price="
+				+ currencyFormat.format(price) + ", color=" + color + ", fuelType=" + fuelType + ", mileage=" + mileage + ", mass=" + mass
+				+ ", cylinders=" + cylinders + ", gasTankCapacity=" + gasTankCapacity + ", startType=" + startType
+				+ "]";
+	}
+	
 }
