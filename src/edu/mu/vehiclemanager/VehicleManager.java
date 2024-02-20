@@ -18,6 +18,10 @@ public class VehicleManager {
 	private final static String vehicleFilePath = "files/vehicleList.csv";
 	private ArrayList<Vehicle> vehicleList;
 	
+	public VehicleManager() {
+		vehicleList = new ArrayList<Vehicle>();
+	}
+	
 	public boolean initializeStock() {
 		try (BufferedReader br = new BufferedReader(new FileReader(vehicleFilePath))) {
 		    String line;
@@ -70,9 +74,55 @@ public class VehicleManager {
 			return false;
 		}
 	}
+	
+	public void displayInformation(Vehicle vehicle) {
+		if(vehicle == null) {
+			System.out.println("VEHICLE COULD NOT BE INITIALIZED");
+		}
+		System.out.println(vehicle.toString());
+		//Ask prof how to get the fuelPrice and distance in order to print off these statistics
+		System.out.println("Fuel Efficiency:");
+		//TODO NOT FINISHED
+		System.out.println(vehicle.calculateFuelEfficiency(0, 0));
+		System.out.println("Maintenance Cost:");
+		//TODO NOT FINISHED
+		System.out.println(vehicle.calculateMaintenanceCost(0));
+		System.out.println("Starting Vehicle!");
+		vehicle.startEngine();
+	}
+
 	public void displayAllCarInformation() {
 		for(Vehicle vehicle : vehicleList) {
-			System.out.println(vehicle.toString());
+			if(vehicle instanceof Car) {
+				displayInformation(vehicle);
+			}
+		}
+	}
+	
+	public void displayAllTruckInformation() {
+		for(Vehicle vehicle : vehicleList) {
+			if(vehicle instanceof Truck) {
+				displayInformation(vehicle);
+			}
+		}
+	}
+	public void displayAllSUVInformation() {
+		for(Vehicle vehicle : vehicleList) {
+			if(vehicle instanceof SUV) {
+				displayInformation(vehicle);
+			}
+		}
+	}
+	public void displayAllMotorBikeInformation() {
+		for(Vehicle vehicle : vehicleList) {
+			if(vehicle instanceof MotorBike) {
+				displayInformation(vehicle);
+			}
+		}
+	}
+	public void displayAllVehicleInformation() {
+		for(Vehicle vehicle : vehicleList) {
+			displayInformation(vehicle);
 		}
 	}
 }
