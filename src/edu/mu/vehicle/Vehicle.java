@@ -12,15 +12,11 @@ public abstract class Vehicle {
 	protected int cylinders;
 	protected double gasTankCapacity;
 	protected StartMechanism startType;
-	
+
 	// Constructors
-	public Vehicle(String brand, String make, 
-					long modelYear, double price,
-					VehicleColor color, FuelType fuelType,
-					double mileage, double mass,
-					int cylinders, double gasTankCapacity,
-					StartMechanism startType) {
-		
+	public Vehicle(String brand, String make, long modelYear, double price, VehicleColor color, FuelType fuelType,
+			double mileage, double mass, int cylinders, double gasTankCapacity, StartMechanism startType) {
+
 		this.brand = brand;
 		this.make = make;
 		this.modelYear = modelYear;
@@ -33,7 +29,7 @@ public abstract class Vehicle {
 		this.gasTankCapacity = gasTankCapacity;
 		this.startType = startType;
 	}
-	
+
 	public Vehicle(Vehicle original) {
 		brand = original.getBrand();
 		make = original.getMake();
@@ -47,14 +43,14 @@ public abstract class Vehicle {
 		gasTankCapacity = original.getGasTankCapacity();
 		startType = original.getStartType();
 	}
-	
+
 	// Abstract methods
 	public abstract double calculateMaintenanceCost(double distance);
-	
+
 	public abstract double calculateFuelEfficiency(double distance, double fuelPrice);
-	
+
 	public abstract void startEngine();
-	
+
 	// Getters and Setters
 	public String getBrand() {
 		return brand;
@@ -135,12 +131,10 @@ public abstract class Vehicle {
 	public void setGasTankCapacity(double gasTankCapacity) {
 		this.gasTankCapacity = gasTankCapacity;
 	}
-	
 
 	public StartMechanism getStartType() {
 		return startType;
 	}
-	
 
 	public void setStartType(StartMechanism startType) {
 		this.startType = startType;
