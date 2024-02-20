@@ -6,15 +6,13 @@ public class Main {
 	public static void main(String[] args) {
 		// Instantiate vehicleManager, perform operations based on the requirements.
 		VehicleManager vehicleManager = new VehicleManager();
-		vehicleManager.initializeStock();
-		vehicleManager.displayAllTruckInformation();
 		// Read vehicle data from the vehcileList.csv file and initialize objects.
-		// TODO
+		vehicleManager.initializeStock();
 		// Display all vehicle information.
-		// TODO
+		vehicleManager.displayAllVehicleInformation();
 		// Display all car information.
-		// TODO
+		vehicleManager.displayAllCarInformation();
 		// Display all motorbike information.
-		// TODO
+		vehicleManager.displayAllMotorBikeInformation();
 	}
 }
