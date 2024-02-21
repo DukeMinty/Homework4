@@ -127,13 +127,44 @@ public class VehicleManager {
 	}
 	
 	public boolean removeVehicle(Vehicle vehicle) {
-//		o Removes the given vehicle from the vehicleList.
-//		o Returns true if the removal is successful, false otherwise.
+		// Removes the specified vehicle from the vehicleList
+		if (vehicle == null) {
+			return false;
+		}
+		
+		boolean vehicleExists = false;
+		
+		for (Vehicle v : vehicleList) {
+			if (vehicle.equals(v)) {
+				vehicleExists = true;
+				vehicleList.remove(vehicle);
+				break;
+			}
+		}
+		
+		return vehicleExists;
 	}
 	
 	public boolean addVehicle(Vehicle vehicle) {
-//		o Adds the given vehicle into the vehicleList.
-//		o Returns true if the addition is successful, false otherwise.
+		if (vehicle == null) {
+			return false;
+		}
+		
+		boolean vehicleExists = false;
+		
+		for (Vehicle v : vehicleList) {
+			if (vehicle.equals(v)) {
+				vehicleExists = true;
+				break;
+			}
+		}
+		
+		if (vehicleExists) {
+			return false;
+		}
+		
+		vehicleList.add(vehicle);
+		return true;
 	}
 
 	public boolean saveVehicleList(){
