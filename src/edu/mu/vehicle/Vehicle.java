@@ -153,4 +153,24 @@ public abstract class Vehicle {
 				+ "]";
 	}
 	
+	@Override
+	public boolean equals(Object obj) {
+		Vehicle v = (Vehicle)obj;
+		
+		boolean result =  brand.equals(v.getBrand()) &&
+							make.equals(v.getMake()) &&
+							modelYear == v.getModelYear() &&
+							price == v.getPrice() &&
+							color.equals(v.getColor()) &&
+							fuelType.equals(v.getFuelType()) &&
+							mileage == v.getMileage() &&
+							mass == v.getMass() &&
+							cylinders == v.getCylinders() &&
+							gasTankCapacity == v.getGasTankCapacity() &&
+							startType.equals(v.getStartType()) &&
+							getClass() == v.getClass();
+		
+		return result;
+	}
+	
 }
