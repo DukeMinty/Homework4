@@ -7,12 +7,11 @@ import edu.mu.vehicle.VehicleColor;
 
 public class MotorBike extends Vehicle{
 
-	public MotorBike(String type, String brand, String make, long modelYear, double price, VehicleColor color, FuelType fuelType,
+	public MotorBike(String brand, String make, long modelYear, double price, VehicleColor color, FuelType fuelType,
 			double mileage, double mass, int cylinders, double gasTankCapacity, StartMechanism startType) {
 		super(brand, make, modelYear, price, color, fuelType, mileage, mass, cylinders, gasTankCapacity, startType);
 		//readFromFile should make sure these are MotorBike and Kickstart
 		//but this is an extra measure since they're mandatory traits
-		setType("MotorBike");
 		setStartType(StartMechanism.KICKSTART);
 	}
 

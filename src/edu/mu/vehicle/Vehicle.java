@@ -3,8 +3,7 @@ package edu.mu.vehicle;
 import java.text.NumberFormat;
 
 public abstract class Vehicle {
-	
-	protected String type = "None";
+
 	protected String brand;
 	protected String make;
 	protected long modelYear;
@@ -54,14 +53,6 @@ public abstract class Vehicle {
 	public abstract double calculateFuelEfficiency(double distance, double fuelPrice);
 
 	public abstract void startEngine();
-	
-	public String getType() {
-		return type;
-	}
-
-	public void setType(String type) {
-		this.type = type;
-	}
 
 	// Getters and Setters
 	public String getBrand() {
@@ -156,7 +147,7 @@ public abstract class Vehicle {
 	
 	@Override
 	public String toString() {
-		return "Vehicle [type=" + type + ", brand=" + brand + ", make=" + make + ", modelYear=" + modelYear + ", price="
+		return "Vehicle [brand=" + brand + ", make=" + make + ", modelYear=" + modelYear + ", price="
 				+ currencyFormat.format(price) + ", color=" + color + ", fuelType=" + fuelType + ", mileage=" + mileage + ", mass=" + mass
 				+ ", cylinders=" + cylinders + ", gasTankCapacity=" + gasTankCapacity + ", startType=" + startType
 				+ "]";

@@ -42,19 +42,19 @@ public class VehicleManager {
 				double gasTankCapacity = Double.parseDouble(values[10]);
 				StartMechanism startType = StartMechanism.valueOf(values[11]);
 	            if("Truck".equals(type)) {
-	            	Vehicle vehicle = new Truck(type,brand,make,modelYear,price,color,fuelType,mileage,mass,cylinders,gasTankCapacity,startType);
+	            	Vehicle vehicle = new Truck(brand,make,modelYear,price,color,fuelType,mileage,mass,cylinders,gasTankCapacity,startType);
 	            	vehicleList.add(vehicle);
 	            }
 	            else if("SUV".equals(type)) {
-	            	Vehicle vehicle = new SUV(type,brand,make,modelYear,price,color,fuelType,mileage,mass,cylinders,gasTankCapacity,startType);
+	            	Vehicle vehicle = new SUV(brand,make,modelYear,price,color,fuelType,mileage,mass,cylinders,gasTankCapacity,startType);
 	            	vehicleList.add(vehicle);
 	            }
 	            else if("Car".equals(type)) {
-	            	Vehicle vehicle = new Car(type,brand,make,modelYear,price,color,fuelType,mileage,mass,cylinders,gasTankCapacity,startType);
+	            	Vehicle vehicle = new Car(brand,make,modelYear,price,color,fuelType,mileage,mass,cylinders,gasTankCapacity,startType);
 	            	vehicleList.add(vehicle);
 	            }
 	            else if("MotorBike".equals(type)) {
-	            	Vehicle vehicle = new MotorBike(type,brand,make,modelYear,price,color,fuelType,mileage,mass,cylinders,gasTankCapacity,startType);
+	            	Vehicle vehicle = new MotorBike(brand,make,modelYear,price,color,fuelType,mileage,mass,cylinders,gasTankCapacity,startType);
 	            	vehicleList.add(vehicle);
 	            }
 	            else {
