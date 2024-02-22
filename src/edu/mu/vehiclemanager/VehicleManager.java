@@ -169,59 +169,58 @@ public class VehicleManager {
 		vehicleList.add(vehicle);
 		return true;
 	}
-}
 
-//	public boolean saveVehicleList(){
-////		o Saves the updated vehicleList back to the CSV file located at vehicleFilePath.
-////		o Overwrites the existing file with the updated data.
-////		o Returns true if the saving is successful, false otherwise (file does not exist, or file empty).
-//	}
-//
-//	private boolean isVehicleType(Vehicle v, Class clazz) {
-////		o Checks if the given vehicle is a specific type of Vehicle subclass.
-////		o If the given vehicle object is the object type, then return true, otherwise return false.
-////		o Use instanceof or getClass() to count the number.
-////		o Call example: isVehicleType(vehicleObj, Truck.class);
-//	}
-//
-//	public int getNumberOfVehichlesByType(Class clazz) {
-////		o Returns the number of objects in the vehicle list based on the object vehicle type
-////		o Use the isVehicleType(Vehicle v, Class clazz) method.
-////		o Call example: getNumberOfVehichlesByType(SUV.class);
-//	}
-//
-//	public Vehicle getVehicleWithHighestMaintenanceCost(double distance) {
-////		o Calculate the maintenance cost for each vehicle in the vehicle list and return the vehicle
-////		with the highest maintenance cost.
-////		o If multiple vehicles have the same maintenance cost, randomly return one of the
-////		vehicles (Use the Random class for random selection).
-//	}
-//
-//	public Vehicle getVehicleWithLowestMaintenanceCost(double distance) {
-////		o Calculate the maintenance cost for each vehicle in the vehicle list and return the vehicle
-////		with the lowest maintenance cost.
-////		o If multiple vehicles have the same maintenance cost, randomly return one of the
-////		vehicles (Use the Random class for random selection).
-//	}
-//
-//	public ArrayList<Vehicle> getVehicleWithHighestFuelEfficiency(double distance, double fuelPrice){
-////		o Calculate the fuel efficiencies for each vehicle in the vehicle list and return the vehicle
-////		with the highest fuel efficiency.
-////		o If multiple vehicles have the same highest fuel efficiency, return vehicles with the same
-////		highest fuel efficiency in an ArrayList.
-//	}
-//
-//	public ArrayList<Vehicle> getVehicleWithLowestFuelEfficiency(double distance, double fuelPrice){
-////		o Calculate the fuel efficiencies for each vehicle in the vehicle list and return the vehicle
-////		with the lowest fuel efficiency.
-////		o If multiple vehicles have the same lowest fuel efficiency, return vehicles with the same
-////		lowest fuel efficiency in an ArrayList.
-//	}
-//
-//	public double getAverageFuelEfficiencyOfSUVs(double distance,double fuelPrice) {
-////		o Calculate the average/mean of the fuel efficiency of SUVs in the vehicle list.
-////		o Use the isVehicleType(Vehicle v, Class clazz) method.
-////		o If no SUVs exist in the list return -1.0 as an error code that indicates there is no SUVs in
-////		the list to calculate the average fuel efficiency
-//	}
-//}
+	public boolean saveVehicleList(){
+//		o Saves the updated vehicleList back to the CSV file located at vehicleFilePath.
+//		o Overwrites the existing file with the updated data.
+//		o Returns true if the saving is successful, false otherwise (file does not exist, or file empty).
+	}
+
+	private boolean isVehicleType(Vehicle v, Class clazz) {
+//		o Checks if the given vehicle is a specific type of Vehicle subclass.
+//		o If the given vehicle object is the object type, then return true, otherwise return false.
+//		o Use instanceof or getClass() to count the number.
+//		o Call example: isVehicleType(vehicleObj, Truck.class);
+	}
+
+	public int getNumberOfVehichlesByType(Class clazz) {
+//		o Returns the number of objects in the vehicle list based on the object vehicle type
+//		o Use the isVehicleType(Vehicle v, Class clazz) method.
+//		o Call example: getNumberOfVehichlesByType(SUV.class);
+	}
+
+	public Vehicle getVehicleWithHighestMaintenanceCost(double distance) {
+//		o Calculate the maintenance cost for each vehicle in the vehicle list and return the vehicle
+//		with the highest maintenance cost.
+//		o If multiple vehicles have the same maintenance cost, randomly return one of the
+//		vehicles (Use the Random class for random selection).
+	}
+
+	public Vehicle getVehicleWithLowestMaintenanceCost(double distance) {
+//		o Calculate the maintenance cost for each vehicle in the vehicle list and return the vehicle
+//		with the lowest maintenance cost.
+//		o If multiple vehicles have the same maintenance cost, randomly return one of the
+//		vehicles (Use the Random class for random selection).
+	}
+
+	public ArrayList<Vehicle> getVehicleWithHighestFuelEfficiency(double distance, double fuelPrice){
+//		o Calculate the fuel efficiencies for each vehicle in the vehicle list and return the vehicle
+//		with the highest fuel efficiency.
+//		o If multiple vehicles have the same highest fuel efficiency, return vehicles with the same
+//		highest fuel efficiency in an ArrayList.
+	}
+
+	public ArrayList<Vehicle> getVehicleWithLowestFuelEfficiency(double distance, double fuelPrice){
+//		o Calculate the fuel efficiencies for each vehicle in the vehicle list and return the vehicle
+//		with the lowest fuel efficiency.
+//		o If multiple vehicles have the same lowest fuel efficiency, return vehicles with the same
+//		lowest fuel efficiency in an ArrayList.
+	}
+
+	public double getAverageFuelEfficiencyOfSUVs(double distance,double fuelPrice) {
+//		o Calculate the average/mean of the fuel efficiency of SUVs in the vehicle list.
+//		o Use the isVehicleType(Vehicle v, Class clazz) method.
+//		o If no SUVs exist in the list return -1.0 as an error code that indicates there is no SUVs in
+//		the list to calculate the average fuel efficiency
+	}
+}

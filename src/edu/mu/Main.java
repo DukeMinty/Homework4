@@ -9,7 +9,7 @@ public class Main {
 		// Read vehicle data from the vehcileList.csv file and initialize objects.
 		vehicleManager.initializeStock();
 		// Display all vehicle information.
-		vehicleManager.displayAllVehicleInformation();
+		vehicleManager.displayAllTruckInformation();
 		// Display all car information.
 		vehicleManager.displayAllCarInformation();
 		// Display all motorbike information.
