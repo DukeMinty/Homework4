@@ -10,26 +10,32 @@ public class Car extends Vehicle{
 	public Car(String brand, String make, long modelYear, double price, VehicleColor color, FuelType fuelType,
 			double mileage, double mass, int cylinders, double gasTankCapacity, StartMechanism startType) {
 		super(brand, make, modelYear, price, color, fuelType, mileage, mass, cylinders, gasTankCapacity, startType);
-		//readFromFile should make sure these are Car and pushstart
-		//but this is an extra measure since they're mandatory traits
 		setStartType(StartMechanism.PUSHSTART);
 	}
 
 	@Override
 	public double calculateMaintenanceCost(double distance) {
-		// TODO Auto-generated method stub
-		return 0;
+		double maintenaceCost = distance * getMass() * (2024-getModelYear()) * getCylinders() * 0.0005;
+		return maintenaceCost;
 	}
 
 	@Override
 	public double calculateFuelEfficiency(double distance, double fuelPrice) {
-		// TODO Auto-generated method stub
-		return 0;
+		double fuelEfficiency = getCylinders() * getGasTankCapacity() * fuelPrice / distance * 0.003;
+		return fuelEfficiency;
 	}
 
 	@Override
 	public void startEngine() {
-		// TODO Auto-generated method stub
+		try {
+			System.out.println("Pushing to start...");
+            Thread.sleep(1000);
+            System.out.println("VRRRRRRR");
+            Thread.sleep(1000);;
+            System.out.println("Started!");
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
 		
 	}
 

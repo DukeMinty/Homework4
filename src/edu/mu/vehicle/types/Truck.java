@@ -10,8 +10,6 @@ public class Truck extends Vehicle{
 	public Truck(String brand, String make, long modelYear, double price, VehicleColor color, FuelType fuelType,
 			double mileage, double mass, int cylinders, double gasTankCapacity, StartMechanism startType) {
 		super(brand, make, modelYear, price, color, fuelType, mileage, mass, cylinders, gasTankCapacity, startType);
-		//readFromFile should make sure these are Truck and Keystart
-		//but this is an extra measure since they're mandatory traits
 		setStartType(StartMechanism.KEYSTART);
 	}
 
