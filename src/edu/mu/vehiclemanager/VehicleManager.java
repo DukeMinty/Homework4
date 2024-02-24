@@ -196,21 +196,21 @@ public class VehicleManager {
 		return count;
 	}
 
-	public Vehicle getVehicleWithHighestMaintenanceCost(distance) {
+	public Vehicle getVehicleWithHighestMaintenanceCost(double distance) {
 //		o Calculate the maintenance cost for each vehicle in the vehicle list and return the vehicle
 //		with the highest maintenance cost.
 //		o If multiple vehicles have the same maintenance cost, randomly return one of the
 //		vehicles (Use the Random class for random selection).
 	}
 
-	public Vehicle getVehicleWithLowestMaintenanceCost(distance) {
+	public Vehicle getVehicleWithLowestMaintenanceCost(double distance) {
 //		o Calculate the maintenance cost for each vehicle in the vehicle list and return the vehicle
 //		with the lowest maintenance cost.
 //		o If multiple vehicles have the same maintenance cost, randomly return one of the
 //		vehicles (Use the Random class for random selection).
 	}
 
-	public ArrayList<Vehicle> getVehicleWithHighestFuelEfficiency(distance, fuelPrice){
+	public ArrayList<Vehicle> getVehicleWithHighestFuelEfficiency(double distance, double fuelPrice){
 		ArrayList<Vehicle> highestFuelEfficiency = new ArrayList<>();
 		double highestEfficiency = 0;
 		int count = 0;
@@ -231,7 +231,7 @@ public class VehicleManager {
 		return highestFuelEfficiency;
 	}
 
-	public ArrayList<Vehicle> getVehicleWithLowestFuelEfficiency(distance, fuelPrice){
+	public ArrayList<Vehicle> getVehicleWithLowestFuelEfficiency(double distance, double fuelPrice){
 		ArrayList<Vehicle> lowestFuelEfficiency = new ArrayList<>();
 			double lowestEfficiency = 0;
 			int count = 0;
@@ -252,7 +252,7 @@ public class VehicleManager {
 		return lowestFuelEfficiency;
 	}
 
-	public double getAverageFuelEfficiencyOfSUVs(distance, fuelPrice) {
+	public double getAverageFuelEfficiencyOfSUVs(double distance, double fuelPrice) {
 //		o Calculate the average/mean of the fuel efficiency of SUVs in the vehicle list.
 //		o Use the isVehicleType(Vehicle v, Class clazz) method.
 //		o If no SUVs exist in the list return -1.0 as an error code that indicates there is no SUVs in
