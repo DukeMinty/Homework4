@@ -185,7 +185,7 @@ public class VehicleManager {
 	}
 
 	@SuppressWarnings("rawtypes")
-	public int getNumberOfVehichlesByType(Class clazz) {
+	public int getNumberOfVehiclesByType(Class clazz) {
 		int count = 0;
 		
 		for (Vehicle v : vehicleList) {
@@ -301,8 +301,21 @@ public class VehicleManager {
 
 	public double getAverageFuelEfficiencyOfSUVs(double distance, double fuelPrice) {
 //		o Calculate the average/mean of the fuel efficiency of SUVs in the vehicle list.
-//		o Use the isVehicleType(Vehicle v, Class clazz) method.
-//		o If no SUVs exist in the list return -1.0 as an error code that indicates there is no SUVs in
-//		the list to calculate the average fuel efficiency
+		int suvCount = getNumberOfVehiclesByType(SUV.class);
+		
+		if (suvCount == 0 || distance == 0) {
+			// distance of 0 will result in a divide by 0 error in calculateFuelEfficiency method
+			return -1;
+		}
+		
+		double totalFuelEfficiency = 0;
+		
+		for (Vehicle v : vehicleList) {
+			if (isVehicleType(v, SUV.class)) {
+				totalFuelEfficiency += v.calculateFuelEfficiency(distance, fuelPrice);
+			}
+		}
+		
+		return totalFuelEfficiency / suvCount;
 	}
 }
