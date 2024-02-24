@@ -176,17 +176,24 @@ public class VehicleManager {
 //		o Returns true if the saving is successful, false otherwise (file does not exist, or file empty).
 	}
 
+	@SuppressWarnings("rawtypes")
 	private boolean isVehicleType(Vehicle v, Class clazz) {
 //		o Checks if the given vehicle is a specific type of Vehicle subclass.
 //		o If the given vehicle object is the object type, then return true, otherwise return false.
-//		o Use instanceof or getClass() to count the number.
-//		o Call example: isVehicleType(vehicleObj, Truck.class);
+		return v.getClass() == clazz;
 	}
 
+	@SuppressWarnings("rawtypes")
 	public int getNumberOfVehichlesByType(Class clazz) {
-//		o Returns the number of objects in the vehicle list based on the object vehicle type
-//		o Use the isVehicleType(Vehicle v, Class clazz) method.
-//		o Call example: getNumberOfVehichlesByType(SUV.class);
+		int count = 0;
+		
+		for (Vehicle v : vehicleList) {
+			if (isVehicleType(v, clazz)) {
+				count++;
+			}
+		}
+		
+		return count;
 	}
 
 	public Vehicle getVehicleWithHighestMaintenanceCost(distance) {
