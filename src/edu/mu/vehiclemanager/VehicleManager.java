@@ -211,10 +211,24 @@ public class VehicleManager {
 	}
 
 	public ArrayList<Vehicle> getVehicleWithLowestFuelEfficiency(distance, fuelPrice){
-//		o Calculate the fuel efficiencies for each vehicle in the vehicle list and return the vehicle
-//		with the lowest fuel efficiency.
-//		o If multiple vehicles have the same lowest fuel efficiency, return vehicles with the same
-//		lowest fuel efficiency in an ArrayList.
+		ArrayList<Vehicle> lowestFuelEfficiency = new ArrayList<>();
+			double lowestEfficiency = 0;
+			int count = 0;
+		for (Vehicle vehicle : vehicleList) {
+			double vehicleEfficiency = vehicle.calculateFuelEfficiency(distance, fuelPrice);
+			if(count == 0){
+				lowestEfficiency = vehicleEfficiency;
+			}
+			if (lowestEfficiency > vehicleEfficiency) {
+				lowestEfficiency = vehicleEfficiency;
+				lowestFuelEfficiency.clear();
+				lowestFuelEfficiency.add(vehicle);
+			} else if (lowestEfficiency == vehicleEfficiency){
+				lowestFuelEfficiency.add(vehicle);
+			}
+			count++;
+		}
+		return lowestFuelEfficiency;
 	}
 
 	public double getAverageFuelEfficiencyOfSUVs(distance, fuelPrice) {
