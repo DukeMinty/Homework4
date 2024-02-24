@@ -17,8 +17,8 @@ public class MotorBike extends Vehicle{
 
 	@Override
 	public double calculateMaintenanceCost(double distance) {
-		// TODO Auto-generated method stub
-		return 0;
+		double maintenaceCost = distance * getMass() * (2024-getModelYear()) * getCylinders() * 0.0002;
+		return maintenaceCost;
 	}
 
 	@Override
