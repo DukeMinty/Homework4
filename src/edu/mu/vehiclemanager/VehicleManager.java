@@ -13,6 +13,7 @@ import edu.mu.vehicle.types.Car;
 import edu.mu.vehicle.types.MotorBike;
 import edu.mu.vehicle.types.SUV;
 import edu.mu.vehicle.types.Truck;
+import java.util.Random;
 
 public class VehicleManager {
 	
@@ -197,10 +198,34 @@ public class VehicleManager {
 	}
 
 	public Vehicle getVehicleWithHighestMaintenanceCost(double distance) {
-//		o Calculate the maintenance cost for each vehicle in the vehicle list and return the vehicle
-//		with the highest maintenance cost.
-//		o If multiple vehicles have the same maintenance cost, randomly return one of the
-//		vehicles (Use the Random class for random selection).
+		if (vehicleList == null || vehicleList.isEmpty()){
+			return null; 
+		}
+		ArrayList<Vehicle> highestCostVehicles = new ArrayList<>();
+		double highestCost = 0; 
+		
+		for (Vehicle vehicle : vehicleList) {  //calculate maintenance cost
+			double maintenanceCost = vehicle.calculateMaintenanceCost(distance);
+			
+			if (maintenanceCost > highestCost){
+				highestCost = maintenanceCost;
+				//set highest cost vehicle, clear array
+				highestCostVehicles.clear();
+				highestCostVehicles.add(vehicle);
+			} else if (maintenanceCost == highestCost){
+				//current vehicle has the same cost, add it to list
+				highestCostVehicles.add(vehicle);
+			}
+			
+		}
+		
+		//randomly select a vehicle if there are multiple in highestCostVehicles
+		if (highestCostVehicles.size() > 1) {
+			Random random = new Random();
+			return highestCostVehicles.get(random.nextInt(highestCostVehicles.size()));
+		}
+		
+		return highestCostVehicles.get(0);
 	}
 
 	public Vehicle getVehicleWithLowestMaintenanceCost(double distance) {
