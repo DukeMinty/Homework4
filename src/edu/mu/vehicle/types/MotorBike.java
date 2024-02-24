@@ -23,8 +23,8 @@ public class MotorBike extends Vehicle{
 
 	@Override
 	public double calculateFuelEfficiency(double distance, double fuelPrice) {
-		// TODO Auto-generated method stub
-		return 0;
+		double fuelEfficiency = getCylinders() * getGasTankCapacity() * fuelPrice / distance * 0.001;
+		return fuelEfficiency;
 	}
 
 	@Override
