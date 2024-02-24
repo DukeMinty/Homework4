@@ -229,10 +229,32 @@ public class VehicleManager {
 	}
 
 	public Vehicle getVehicleWithLowestMaintenanceCost(double distance) {
-//		o Calculate the maintenance cost for each vehicle in the vehicle list and return the vehicle
-//		with the lowest maintenance cost.
-//		o If multiple vehicles have the same maintenance cost, randomly return one of the
-//		vehicles (Use the Random class for random selection).
+		if (vehicleList == null || vehicleList.isEmpty()) {
+            return null; // Or throw an exception, depending on your error handling
+        }
+		ArrayList<Vehicle> lowestCostVehicles = new ArrayList<>();
+        double lowestCost = Double.MAX_VALUE; // set the highest possible value
+        
+        for (Vehicle vehicle : vehicleList) {
+            double maintenanceCost = vehicle.calculateMaintenanceCost(distance);
+            
+            if (maintenanceCost > lowestCost){
+				lowestCost = maintenanceCost;
+				//set lowest cost vehicle, clear array
+				lowestCostVehicles.clear();
+				lowestCostVehicles.add(vehicle);
+			} else if (maintenanceCost == lowestCost){
+				//current vehicle has the same cost, add it to list
+				lowestCostVehicles.add(vehicle);
+			}
+        }
+        
+      // randomly select a vehicle if there are multiple in array
+        if (lowestCostVehicles.size() > 1) {
+            Random random = new Random();
+            return lowestCostVehicles.get(random.nextInt(lowestCostVehicles.size()));
+        } 
+        return lowestCostVehicles.get(0);
 	}
 
 	public ArrayList<Vehicle> getVehicleWithHighestFuelEfficiency(double distance, double fuelPrice){
