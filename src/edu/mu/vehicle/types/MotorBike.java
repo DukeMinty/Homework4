@@ -29,7 +29,15 @@ public class MotorBike extends Vehicle{
 
 	@Override
 	public void startEngine() {
-		// TODO Auto-generated method stub
+		try {
+			System.out.println("Kick Starting...");
+            		Thread.sleep(1000);
+            		System.out.println("VRRRRRRR");
+	        	Thred.sleep(1000);;
+	        	System.out.println("Started!");
+        	} catch (InterruptedException e) {
+            		e.printStackTrace();
+        	}
 		
 	}
 
