@@ -204,10 +204,24 @@ public class VehicleManager {
 	}
 
 	public ArrayList<Vehicle> getVehicleWithHighestFuelEfficiency(distance, fuelPrice){
-//		o Calculate the fuel efficiencies for each vehicle in the vehicle list and return the vehicle
-//		with the highest fuel efficiency.
-//		o If multiple vehicles have the same highest fuel efficiency, return vehicles with the same
-//		highest fuel efficiency in an ArrayList.
+		ArrayList<Vehicle> highestFuelEfficiency = new ArrayList<>();
+		double highestEfficiency = 0;
+		int count = 0;
+		for (Vehicle vehicle : vehicleList) {
+			double vehicleEfficiency = vehicle.calculateFuelEfficiency(distance, fuelPrice);
+			if(count == 0){
+				highestEfficiency = vehicleEfficiency;
+			}
+			if (highestEfficiency < vehicleEfficiency) {
+				highestEfficiency = vehicleEfficiency;
+				highestFuelEfficiency.clear();
+				highestFuelEfficiency.add(vehicle);
+			} else if (highestEfficiency == vehicleEfficiency){
+				highestFuelEfficiency.add(vehicle);
+			}
+			count++;
+		}
+		return highestFuelEfficiency;
 	}
 
 	public ArrayList<Vehicle> getVehicleWithLowestFuelEfficiency(distance, fuelPrice){
